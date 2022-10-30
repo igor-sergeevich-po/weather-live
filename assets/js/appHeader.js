@@ -1,3 +1,5 @@
+import { handleWeatherByGeolocation } from "./geolocation.js";
+
 export const createHeader = (city) => {
     const header = document.createElement('header');
     const headerContainer = document.createElement('div');
@@ -35,6 +37,8 @@ export const createHeader = (city) => {
     cityLocation.textContent = 'Мое местоположение';
     unitsC.textContent = 'C';
     unitsF.textContent = 'F';
+
+    cityLocation.addEventListener('click', handleWeatherByGeolocation)
 
     header.append(headerContainer);
     headerContainer.append(headerCity, headerUnits);
