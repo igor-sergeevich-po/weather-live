@@ -1,4 +1,11 @@
 @media all and (max-width: 750px) {
+    
+.search__error {
+    color: tomato;
+    padding: 6px;
+
+}
+
     .search_input {
         border: none;
         outline: none;
