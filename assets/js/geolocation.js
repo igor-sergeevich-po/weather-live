@@ -15,7 +15,6 @@ export const handleWeatherByGeolocation = () => {
             `https://api.geoapify.com/v1/geocode/reverse?lat=${crd.latitude}&lon=${crd.longitude}&lang=ru&apiKey=4ada1ed8a6694bbb816a6614162f9cb0`
             )
         const rezult = await response.json();
-        console.log(rezult);
 
         const weather = await getWeatherData(rezult.features[0].properties.city);
 

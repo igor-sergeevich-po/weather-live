@@ -8,8 +8,6 @@ const app = async () => {
     const content = createContent(weather)
 
     document.body.append(header, content)
-
-    console.log(weather)
 }
 
 app()

@@ -48,7 +48,7 @@
 }
 
 .weather-info__list {
-    margin: 0;
+    margin-top: 80px;
     padding: 0;
     width: 100%;
     list-style-type: none;
