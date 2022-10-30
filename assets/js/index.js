@@ -3,7 +3,7 @@ import { createContent } from "./appContent.js";
 import { createHeader } from "./appHeader.js";
 
 const app = async () => {
-    const weather = await getWeatherData(JSON.parse(localStorage.getItem('city')) || 'Аксай');
+    const weather = await getWeatherData(JSON.parse(localStorage.getItem('city')) || 'Ростов-на-Дону');
     const header = createHeader(weather.name)
     const content = createContent(weather)
 
