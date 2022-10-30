@@ -19,8 +19,17 @@ export const capitalizeFirstletter = (string) => {
 }
 
 export const resetWeatherContent = (city, weather) => {
+    localStorage.setItem('city', JSON.stringify(city));
     document.body.innerHTML = '';
     const header = createHeader(city);
     const content = createContent(weather);
     document.body.append(header, content);
+}
+
+export const cToF = (celsius) => {
+    return celsius * 9 / 5 + 32;
+}
+
+export const fToC = (fahrenheit) => {
+    return (fahrenheit - 32) * 5 / 9;
 }

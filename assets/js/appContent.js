@@ -54,7 +54,7 @@ export const createContent = (data) => {
 
     weatherInfoPressure.append(
         createWeatherItemTitle('Давление'),
-        createWeatherItemContent(data.main.pressure + 'мм. рт. ст.'),
+        createWeatherItemContent(data.main.pressure + ' мм. рт. ст.'),
     );
 
     weatherInfoHumidity.append(
