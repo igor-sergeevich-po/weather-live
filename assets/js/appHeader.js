@@ -87,7 +87,7 @@ export const createHeader = (city) => {
                 }
             
         } else { 
-            console.log( 'alarma')
+            return;
         }
     })
        
