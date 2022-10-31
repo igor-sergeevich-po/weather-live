@@ -44,6 +44,27 @@ export const createHeader = (city) => {
         headerCity.innerHTML = '';
         searchBlock.append(searchInput, searchBtn,errorBlock);
         headerCity.append(searchBlock);
+        document.addEventListener('keyup', async  event => {
+            if (event.key === 'Enter') {
+                
+                    if (!searchInput.value) {
+                        return;
+                    }
+                    try {
+                        const weather = await getWeatherData(searchInput.value);
+                        if (weather.message) {
+                            showError(weather.message);
+                            return;
+                        }
+                        resetWeatherContent(weather.name, weather)
+                    } catch (error) {
+                        console.log(error)
+                    }
+                
+            } else { 
+                return;
+            }
+        })
     })
     cityLocation.addEventListener('click', handleWeatherByGeolocation)
 
@@ -69,27 +90,7 @@ export const createHeader = (city) => {
         }
     })
 
-    document.addEventListener('keyup', async  event => {
-        if (event.key === 'Enter') {
-            
-                if (!searchInput.value) {
-                    return;
-                }
-                try {
-                    const weather = await getWeatherData(searchInput.value);
-                    if (weather.message) {
-                        showError(weather.message);
-                        return;
-                    }
-                    resetWeatherContent(weather.name, weather)
-                } catch (error) {
-                    console.log(error)
-                }
-            
-        } else { 
-            console.log( 'alarma')
-        }
-    })
+    
        
     window.addEventListener('click', (e) => {
         if (e.target == searchInput || e.target == searchBtn || e.target == cityChange) {
